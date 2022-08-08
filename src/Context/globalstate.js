@@ -7,8 +7,8 @@ import appreducer from "./appreducer";
 const initialState={
     transactions:[
         {id:1, description:"Income1", transactionAmount: 1000},
-        {id:2, description:"Expense1", transactionAmount: -1000},
-        {id:3, description:"Income2", transactionAmount: 1000}
+        {id:2, description:"Expense1", transactionAmount: -5000},
+        {id:3, description:"Income2", transactionAmount: 2000}
     ]
 }
 
@@ -26,7 +26,7 @@ export const GlobalProvider = ({children})=>{
     return(
         <GlobalContext.Provider value={
             {
-                transactions: initialState.transactions
+                transactions: state.transactions
             }
             
         }>

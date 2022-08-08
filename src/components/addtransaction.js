@@ -15,7 +15,7 @@ function Addtranscation() {
                 <input type="text" placeholder="Add Details"
                  value={Description}
                  onChange={(event)=>setDescription(event.target.value)}>
-
+                        
                 </input>
             </div>
 
