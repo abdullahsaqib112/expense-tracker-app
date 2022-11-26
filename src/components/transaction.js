@@ -1,18 +1,17 @@
-import React from "react";
+import React, {useContext} from 'react';
+import { GlobalContext } from '../Context/globalstate';
 
-export const Transaction=({transactions})=> {
+//Money formatter function
+
+
+export const Transaction = ({ transaction }) => {
+  const { Deletetransaction } = useContext(GlobalContext);
+
+  const sign = transaction.amount < 0 ? '-' : '+';
+
   return (
-    
-            <li className="plus">
-
-            {transactions.description}
-
-                <span> {transactions.transactionAmount} </span>
-                <button className="delete-btn"> X </button>
-            </li>
-        
-
-  );
+    <li className={transaction.amount < 0 ? 'minus' : 'plus'}>
+      {transaction.text} <span>{sign}{transaction.amount}</span><button onClick={() => Deletetransaction(transaction.id)} className="delete-btn">x</button>
+    </li>
+  )
 }
-
-export default Transaction;
